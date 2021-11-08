@@ -43,8 +43,8 @@ public class HTMLParserService {
         var matchFirst = row_data_pattern.matcher(files.get(0));
         var matchSecond = row_data_pattern.matcher(files.get(1));
         if (matchFirst.find() && matchSecond.find()) {
-            match.setFirst(matchFirst.group(1));
-            match.setSecond(matchSecond.group(1));
+            match.setFirst(matchFirst.group(1).substring(0, 36));
+            match.setSecond(matchSecond.group(1).substring(0, 36));
             match.setPercentage(Long.parseLong(matchFirst.group(2)));
             match.setLines(Long.parseLong(row.getElementsByTag("td").get(2).text()));
             return match;

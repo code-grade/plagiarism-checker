@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "code-grade.storage.root-path",
+      "type": "java.lang.String",
+      "description": "Description for code-grade.storage.root-path."
+    },
+    {
+      "name": "code-grade.moss.user-id",
+      "type": "java.lang.String",
+      "description": "Description for code-grade.moss.user-id."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+
+server:
+  port: 10101
+  servlet:
+    context-path: "/api/plagiarism/"
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: always
+    include-exception: false
+
+spring:
+  application:
+    name: plagiarism
+
+eureka:
+  client:
+    enabled: false
+    serviceUrl:
+      defaultZone: http://52.170.130.8:8761/eureka
+
+code-grade:
+  moss:
+    user-id: "954905329"
+  storage:
+    root-path: "./storage"

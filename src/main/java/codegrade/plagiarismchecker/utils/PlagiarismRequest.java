@@ -1,6 +1,8 @@
 package codegrade.plagiarismchecker.utils;
 
 import lombok.*;
+
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -27,7 +29,8 @@ public class PlagiarismRequest {
 
     public Map<String, String> getByLanguage(String language) {
         return this.sources.entrySet().stream()
-                .filter(entry -> Objects.equals(entry.getValue().getLanguage(), language))
+                .filter(entry -> Objects.equals(entry.getValue()
+                        .getLanguage().toLowerCase(Locale.ROOT), language))
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         en -> en.getValue().getSource()

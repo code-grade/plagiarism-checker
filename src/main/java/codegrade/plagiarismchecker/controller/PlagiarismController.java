@@ -23,9 +23,10 @@ public class PlagiarismController {
 
     @PostMapping(path = "/report")
     public ResponseEntity<Object> plagiarismReport(@RequestBody PlagiarismRequest request) {
-        return ResponseEntity.ok(Map.of(
+        var report = Map.of(
                 "message", "Success",
                 "data", plagiarismService.generateReport(request)
-        ));
+        );
+        return ResponseEntity.ok(report);
     }
 }
